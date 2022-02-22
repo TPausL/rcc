@@ -2,7 +2,7 @@
   "name": "rcc",
   "displayName": "reactComponentCreation",
   "description": "",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.55.0"
   },
@@ -15,7 +15,8 @@
   "publisher": "TPausL",
   "activationEvents": [
     "onCommand:rcc.addComponent",
-    "onCommand:rcc.addComponentFolder"
+    "onCommand:rcc.addComponentFolder",
+    "onCommand:rcc.addProvider"
   ],
   "main": "./dist/extension.js",
   "contributes": {
@@ -23,6 +24,10 @@
       {
         "command": "rcc.addComponent",
         "title": "Add React Component"
+      },
+      {
+        "command": "rcc.addProvider",
+        "title": "Add React Context Provider"
       }
     ],
     "snippets": [
@@ -37,11 +42,20 @@
           "when": "explorerResourceIsFolder",
           "command": "rcc.addComponent",
           "group": "5_cutcopypaste"
+        },
+        {
+          "when": "explorerResourceIsFolder",
+          "command": "rcc.addProvider",
+          "group": "5_cutcopypaste"
         }
       ],
       "commandPalette": [
         {
           "command": "rcc.addComponent",
+          "when": "false"
+        },
+        {
+          "command": "rcc.addProvider",
           "when": "false"
         }
       ]
